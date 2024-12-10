@@ -1,6 +1,7 @@
 //Initialized variables
 let is_game_running = false; 
 let score = 0;
+let now = new Date().getTime();
 
 //Declared variables
 let end;
