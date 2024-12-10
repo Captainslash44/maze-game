@@ -1,13 +1,12 @@
 //Initialized variables
 let is_game_running = false; 
 let score = 0;
-let counter = 60;
 
 //Declared variables
 let end;
 let start;
 let boundaries;
-let status_display; 
+let status_display;
 
 document.addEventListener("DOMContentLoaded", loadPage);
 
@@ -31,16 +30,6 @@ function gameOver(){
 function startGame(){
     displayScore("");
     is_game_running = true;
-    const timer = setInterval(function() {
-        if(is_game_running){
-            counter --;
-            status_display.innerHTML = "00:"+ counter;
-            if (counter == 0){
-                clearInterval(timer);
-                gameOver();
-            }}
-        
-    }, 1000);
     for(let i = 0; i < boundaries.length; i++)
         boundaries[i].style.backgroundColor = "#eeeeee"; 
 }
