@@ -93,9 +93,6 @@ function loadPage(){
 
     end.addEventListener("mouseover", endGame);
     start.addEventListener("click", startGame);
-    prize1.addEventListener("mouseover", function(){
-        prize1.hidden = true;
-    })
     for(let i = 0; i < boundaries.length; i++){
         boundaries[i].addEventListener("mouseover", gameOver);
     }
