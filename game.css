@@ -59,11 +59,13 @@ div.boundary.example {
 .fa-star{
 	margin-top: 220px;
     margin-left: 100px;
+	position: absolute;
 }
 
 .fa-life-ring{
-	margin-left: 220px;
-    margin-top: 50px;
+	margin-left: 320px;
+    margin-top: 220px;
+	position: absolute;
 }
 
 div.youlose {

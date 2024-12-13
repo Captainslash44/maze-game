@@ -46,9 +46,20 @@ function gameOver(){
 function startGame(){
     displayScore("Game has started: ");
     is_game_running = true;
-    
+    prize1.addEventListener("mouseover", function(){
+        prize_sound.play();
+        prize1.style.display = 'none';
+        score += 2;
+    });
+    prize2.addEventListener("mouseover", function(){
+        prize2.style.display = 'none';
+        prize_sound.play();
+        score += 2;
+    });
     for(let i = 0; i < boundaries.length; i++)
         boundaries[i].style.backgroundColor = "#eeeeee"; 
+    
+
 }
 
 function endGame(){
@@ -93,6 +104,7 @@ function loadPage(){
 
     end.addEventListener("mouseover", endGame);
     start.addEventListener("click", startGame);
+
     for(let i = 0; i < boundaries.length; i++){
         boundaries[i].addEventListener("mouseover", gameOver);
     }
