@@ -52,6 +52,8 @@ div.boundary.example {
 	margin: auto;
 	width: 100px;
 	height: 25px;
+	text-align: center;
+	
 }
 
 div.youlose {

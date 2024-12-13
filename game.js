@@ -7,6 +7,7 @@ let end;
 let start;
 let boundaries;
 let status_display;
+let reset;
 
 document.addEventListener("DOMContentLoaded", loadPage);
 
@@ -44,17 +45,23 @@ function endGame(){
     }
 }
 
+function resetGame(){
+    location.reload();
+}
+
 function loadPage(){
     end = document.getElementById("end");
     start = document.getElementById("start");
     boundaries = document.getElementsByClassName("boundary");
     status_display =  document.getElementById("status");
+    reset = document.getElementById("reset-button");
 
     end.addEventListener("mouseover", endGame);
     start.addEventListener("click", startGame);
     for(let i = 0; i < boundaries.length; i++){
         boundaries[i].addEventListener("mouseover", gameOver);
     }
+    reset.addEventListener("click", resetGame);
 }
 
 
