@@ -1,6 +1,7 @@
 //Initialized variables
 let is_game_running = false; 
 let score = 0;
+let remaining_time = 10;
 
 //Declared variables
 let end;
@@ -8,13 +9,21 @@ let start;
 let boundaries;
 let status_display;
 let reset;
+let countDown;
+
 
 document.addEventListener("DOMContentLoaded", loadPage);
 
 
 function displayScore(message){
-    if(message != "")
+    if(message == "You Won!"){
         status_display.innerHTML = message + "<br/>" + "Your Score is: " + score;
+    }
+    else if(message == "Game Over!"){
+        status_display.innerHTML = message + "<br/>" + "Your Score is: " + score;
+} else{
+    startTimer();
+}
 }
 
 function gameOver(){
@@ -24,12 +33,13 @@ function gameOver(){
         if(score > 0)
             score = score - 1;
         displayScore("Game Over!");
+        clearInterval(countDown);
         is_game_running = false;
     }
 }
 
 function startGame(){
-    displayScore("");
+    displayScore("Game has started: ");
     is_game_running = true;
     for(let i = 0; i < boundaries.length; i++)
         boundaries[i].style.backgroundColor = "#eeeeee"; 
@@ -43,6 +53,18 @@ function endGame(){
         displayScore("You Won!");
         is_game_running = false;
     }
+}
+
+function startTimer(){
+    
+    countDown = setInterval(function(){
+        status_display.innerHTML = `Game has started; 00:${remaining_time}`;
+        remaining_time --;
+        if(remaining_time == 0){
+            gameOver();
+            clearInterval(countDown);
+        }
+    },1000);
 }
 
 function resetGame(){
