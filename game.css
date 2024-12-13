@@ -56,6 +56,16 @@ div.boundary.example {
 	
 }
 
+.fa-star{
+	margin-top: 220px;
+    margin-left: 100px;
+}
+
+.fa-life-ring{
+	margin-left: 220px;
+    margin-top: 50px;
+}
+
 div.youlose {
 	background-color: #ff8888;
 }
